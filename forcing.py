@@ -22,10 +22,10 @@ while True:
     try:
         getSite()
     except Exception as e:
-        print(f"Erreur: {e}")
         continue
     else:
         print(f"récup à {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.")
+        break
 
     # Vérifier si l'heure actuelle est passée l'heure de fin
     if datetime.now() >= end_time:
