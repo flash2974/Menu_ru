@@ -7,4 +7,4 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "-u", "run_auto.py"]
+CMD ["python", "-u", "bot.py"]
