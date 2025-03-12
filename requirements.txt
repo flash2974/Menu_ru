@@ -1,7 +1,5 @@
 requests
 beautifulsoup4
-pandas
 python-dotenv
 schedule
-datetime
-PIL
+PIllow

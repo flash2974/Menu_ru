@@ -34,7 +34,7 @@ def actions(max_attempts=3):
 
 if __name__ == '__main__':
     # hour = "10:20"
-    hour = "14:50"
+    hour = "15:00"
 
     schedule.every().monday.at(hour).do(actions)
     schedule.every().tuesday.at(hour).do(actions)
