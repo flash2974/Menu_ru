@@ -4,4 +4,7 @@ services:
   app:
     build:
       context: .
+    env_file:
+      - .env # Variables d'environnement
+    container_name: menu_ru_app
     restart: unless-stopped

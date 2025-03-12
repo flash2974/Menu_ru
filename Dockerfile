@@ -5,7 +5,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install --no-cache-dir beautifulsoup4 requests
+RUN pip install --no-cache-dir -r requirements.txt
 
-
-CMD ["python", "-u", "forcing.py"]
+CMD ["python", "-u", "run_auto.py"]
