@@ -33,8 +33,8 @@ def actions(max_attempts=3):
 
 
 if __name__ == '__main__':
-    # hour = "10:20"
-    hour = "15:00"
+    hour = "10:20"
+    # hour = "17:28"
 
     schedule.every().monday.at(hour, "Europe/Paris").do(actions)
     schedule.every().tuesday.at(hour, "Europe/Paris").do(actions)

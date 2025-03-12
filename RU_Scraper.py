@@ -12,6 +12,8 @@ def getMenu() :
             soup = BeautifulSoup(response.text, "html.parser")
             date = soup.find("time", class_='menu_date_title')      
             meal = soup.find("ul", class_='meal_foodies')
+            if not date or not meal :
+                raise Exception('pas date/meal')
     
     except :
         raise Exception('kde')
