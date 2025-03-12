@@ -36,11 +36,11 @@ if __name__ == '__main__':
     # hour = "10:20"
     hour = "15:00"
 
-    schedule.every().monday.at(hour).do(actions)
-    schedule.every().tuesday.at(hour).do(actions)
-    schedule.every().wednesday.at(hour).do(actions)
-    schedule.every().thursday.at(hour).do(actions)
-    schedule.every().friday.at(hour).do(actions)
+    schedule.every().monday.at(hour, "Europe/Paris").do(actions)
+    schedule.every().tuesday.at(hour, "Europe/Paris").do(actions)
+    schedule.every().wednesday.at(hour, "Europe/Paris").do(actions)
+    schedule.every().thursday.at(hour, "Europe/Paris").do(actions)
+    schedule.every().friday.at(hour, "Europe/Paris").do(actions)
 
     while True :
         schedule.run_pending()
