@@ -14,9 +14,11 @@ def getMenu() :
             meal = soup.find("ul", class_='meal_foodies')
             if not date or not meal :
                 raise Exception('pas date/meal')
+        else :
+            Exception('code != 200')
     
     except :
-        raise Exception('kde')
+        raise Exception('Erreur')
     
     else :
         dico = {}
