@@ -6,33 +6,29 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def getMenu() :
-    try :
-        response = requests.get('https://www.crous-nantes.fr/restaurant/resto-u-la-chantrerie/')
-        
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.text, "html.parser")
-            date = soup.find("time", class_='menu_date_title')      
-            meal = soup.find("ul", class_='meal_foodies')
-            
-            dico = {}
-            dico['date'] = date.text.strip()
-            dico['menu'] = {}
-            for meal_item in meal.find_all("li", recursive=False):
-                meal_type = meal_item.contents[0].strip()
-                
-                dico['menu'][meal_type] = []
-                
-                sub_meals = meal_item.find("ul")
-                if sub_meals:
-                    for sub_meal in sub_meals.find_all("li"):
-                        dico['menu'][meal_type].append(sub_meal.text.strip())
-            
-            return dico
-        else :
-            raise Exception('code != 200')
+    response = requests.get('https://www.crous-nantes.fr/restaurant/resto-u-la-chantrerie/')
     
-    except :
-        raise Exception('Erreur')
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, "html.parser")
+        date = soup.find("time", class_='menu_date_title')      
+        meal = soup.find("ul", class_='meal_foodies')
+        
+        dico = {}
+        dico['date'] = date.text.strip()
+        dico['menu'] = {}
+        for meal_item in meal.find_all("li", recursive=False):
+            meal_type = meal_item.contents[0].strip()
+            
+            dico['menu'][meal_type] = []
+            
+            sub_meals = meal_item.find("ul")
+            if sub_meals:
+                for sub_meal in sub_meals.find_all("li"):
+                    dico['menu'][meal_type].append(sub_meal.text.strip())
+        
+        return dico
+    else :
+        raise Exception('Code != 200')
         
                        
 
