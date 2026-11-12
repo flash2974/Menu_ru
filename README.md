@@ -1,4 +1,6 @@
 # Menu_ru
-Un bot instagram qui poste le menu du RU en story, tous les jours (scrape le site du RU)
+Instagram bot posting the universitary restaurant menu everyday (by scraping its website)
+
+well, this poor bot lasted like 1 hour before my VPS IP was banned 💀
 
 <img src="image.png" height="350px">
